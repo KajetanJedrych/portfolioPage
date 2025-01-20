@@ -21,21 +21,37 @@ const Skills = () => {
   ];
 
   return (
-    <section className="bg-amber-50 py-16 px-4" id="skills">
+    <section className="bg-gradient-to-b from-amber-50 to-amber-100 py-20 px-4" id="skills">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-left mb-8">My Skills</h2>
-        <div className="grid grid-cols-4 gap-8 md:grid-cols-5 lg:grid-cols-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            My Skills
+          </h2>
+          <div className="w-24 h-1 bg-amber-400 mx-auto rounded-full"></div>
+        </div>
+        
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center p-4 rounded-xl bg-gradient-to-br from-yellow-100 to-amber-50 shadow-lg"
+              className="group relative transform transition-all duration-300 hover:scale-105"
             >
-              <img
-                src={`${process.env.PUBLIC_URL}/${skill.icon}`}
-                alt={skill.name}
-                className="w-12 h-12 mb-2"
-              />
-              <p className="text-sm font-medium text-gray-700">{skill.name}</p>
+              <div className="flex flex-col items-center justify-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gradient-to-br from-amber-50 to-amber-100">
+                <div className="relative w-16 h-16 mb-4 transform transition-transform duration-300 group-hover:rotate-6">
+                  <img
+                    src={`${process.env.PUBLIC_URL}/${skill.icon}`}
+                    alt={skill.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
+                  {skill.name}
+                </p>
+                
+                {/* Decorative elements */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-200/20 to-amber-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-br from-amber-300 to-amber-500 opacity-0 group-hover:opacity-20 blur transition-opacity duration-300" />
+              </div>
             </div>
           ))}
         </div>
