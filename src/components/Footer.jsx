@@ -21,8 +21,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-amber-200 shadow-md shadow-2xl">
-      <div className="max-w-7xl mx-auto px-4 py-6">
+    <footer className="bg-amber-50 shadow-2xl">
+      <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div>
             <h2 className="text-xl font-bold text-gray-800">

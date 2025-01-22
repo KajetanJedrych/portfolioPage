@@ -45,7 +45,7 @@ const WorkExperience = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-amber-100 to-amber-200 py-16 px-4" id="experience">
+    <section className="bg-gradient-to-b from-amber-100 to-amber-100 py-16 px-4" id="experience">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col items-center mb-12">
           <h2 className="text-4xl font-bold text-center text-slate-800 mb-6">
