@@ -8,9 +8,10 @@ const Hero = () => {
           Hello my name is  <span className="text-blue-600">Kajetan</span>
         </h1>
         <p className="text-lg text-gray-600">
-          I guess you could call me a digital wizard, weavin g spells where I've elevated business outcomes 
-          and concocted seamless solutions. Excelling in unraveling complex puzzles, I craft applications 
-          that not only run flawlessly but also infuse a dash of enchantment into every interaction.
+          As a QA Engineer, I bring expertise in delivering high-quality software testing solutions through my 9-to-5 role.
+          Proficient in tools and technologies such as AWS, Python, Java, JavaScript, SQL, and Jenkins, I ensure robust and efficient testing processes.
+          Beyond my professional work, I’m deeply passionate about web application development, a skill I’ve honed during university and in my free time.
+          I specialize in building full-stack projects using Django and React, blending creativity with technical precision to bring ideas to life.
         </p>
       </div>
     </section>

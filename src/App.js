@@ -3,6 +3,8 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import WorkExperience from './components/WorkExperience';
+import Footer from './components/Footer';
+
 
 const App = () => {
   return (
@@ -12,6 +14,7 @@ const App = () => {
         <Hero />
         <Skills />
         <WorkExperience />
+        <Footer />
       </main>
     </div>
   );
