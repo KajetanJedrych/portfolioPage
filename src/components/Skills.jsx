@@ -11,7 +11,7 @@ const Skills = () => {
     { name: 'TypeScript', icon: 'typescript.svg' },
     { name: 'SQL', icon: 'sql.png' },
     { name: 'Python', icon: 'Python-logo-notext.svg' },
-    { name: 'Django', icon: 'django.png' },
+    { name: 'Django', icon: 'django.svg' },
     { name: 'Azure', icon: 'Amazon_Web_Services_Logo.svg' },
     { name: 'Cucumber', icon: 'cucumber.svg' },
     { name: 'Playwright', icon: 'playwright-logo.svg' },
@@ -21,7 +21,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-amber-50 to-amber-100 py-20 px-4" id="skills">
+    <section className="py-20 px-4" id="skills">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">

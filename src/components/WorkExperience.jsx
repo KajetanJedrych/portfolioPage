@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, Briefcase, ChevronRight, Download } from 'lucide-react';
+import {Briefcase, ChevronRight, Download } from 'lucide-react';
 
 const WorkExperience = () => {
   const experiences = [
@@ -19,7 +19,7 @@ const WorkExperience = () => {
       title: "Software Test Engineer",
       company: "Solwit S.A (Intel Poland)",
       period: "2021 - 2024",
-      icon: <Building2 className="w-6 h-6" />,
+      icon: <Briefcase className="w-6 h-6" />,
       description: [
         "Led performance testing department for OpenVINO applications",
         "Developed Python tools for validation procedures enhancement",
@@ -31,7 +31,7 @@ const WorkExperience = () => {
       title: "Junior Specialist for Testing",
       company: "ManpowerGroup Poland (Intel Poland)",
       period: "2020 - 2021",
-      icon: <Building2 className="w-6 h-6" />,
+      icon: <Briefcase className="w-6 h-6" />,
       description: [
         "Established Windows test environments",
         "Executed thorough testing procedures",
@@ -45,12 +45,16 @@ const WorkExperience = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-amber-100 to-amber-100 py-16 px-4" id="experience">
+    <section className="py-16 px-4" id="experience">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col items-center mb-12">
-          <h2 className="text-4xl font-bold text-center text-slate-800 mb-6">
-            Work Experience
-          </h2>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-center text-slate-800 mb-4">
+              Work Experience
+            </h2>
+            <div className="w-24 h-1 bg-amber-400 mx-auto rounded-full"></div>
+          </div>
+          
           
           <button
             onClick={handleDownloadCV}

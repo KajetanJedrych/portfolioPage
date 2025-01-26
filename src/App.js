@@ -1,22 +1,24 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Skills from './components/Skills';
-import WorkExperience from './components/WorkExperience';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 import Footer from './components/Footer';
-
 
 const App = () => {
   return (
-    <div className="font-sans">
-      <Header />
-      <main>
-        <Hero />
-        <Skills />
-        <WorkExperience />
+    <Router>
+      <div className="font-sans">
+        <Header />
+        <Routes>
+          <Route path="/" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
         <Footer />
-      </main>
-    </div>
+      </div>
+    </Router>
   );
 };
 
