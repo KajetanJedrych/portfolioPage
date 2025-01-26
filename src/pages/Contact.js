@@ -19,25 +19,32 @@ const ContactPage = () => {
     }));
   };
 
+  const [canSubmit, setCanSubmit] = useState(true);
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    if (!canSubmit) {
+      setStatus("Please wait before sending another message.");
+      return;
+    }
+  
     emailjs.send(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID, 
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
       process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
       {
         from_name: formData.name,
         from_email: formData.email,
-        message: formData.message
+        message: formData.message,
       },
       process.env.REACT_APP_EMAILJS_PUBLIC_KEY
     )
     .then(() => {
-      setStatus('Message sent successfully!');
+      setStatus("Message sent successfully!");
       setFormData({ name: '', email: '', message: '' });
+      setCanSubmit(false);
+      setTimeout(() => setCanSubmit(true), 120000);
     })
     .catch((error) => {
-      setStatus('Failed to send message. Please try again.');
+      setStatus("Failed to send message. Please try again.");
       console.error(error);
     });
   };
