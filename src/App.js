@@ -6,6 +6,8 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import { Analytics } from "@vercel/analytics/react"
+import ScrollToTop from "./components/ScrollToTop";
+
 
 
 const App = () => {
@@ -13,6 +15,7 @@ const App = () => {
     <Router>
       <div className="font-sans">
         <Header />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<About />} />
           <Route path="/projects" element={<Projects />} />
