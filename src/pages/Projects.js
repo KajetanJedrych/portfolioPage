@@ -22,7 +22,7 @@ const Projects = () => {
       technologies: ["React", "Tailwind CSS", "emailjs"],
       description: "Responsive personal portfolio showcasing skills, experience, and projects with modern, interactive design",
       githubLink: "https://github.com/KajetanJedrych/portfolioPage",
-      demoLink: "https://your-portfolio-site.com"
+      demoLink: "https://www.jedrychk.com/"
     },
     {
       title: "Frontend of a calendar application for a massage studio",
