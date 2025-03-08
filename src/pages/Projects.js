@@ -3,6 +3,14 @@ import { Code, ExternalLink, Github, MessageCircle } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
+        
+    {
+      title: "Calculator Page",
+      technologies: ["React", "Tailwind CSS", "TypeScript", "MaterialUi"],
+      description: "A website for calculating Polish taxes, social security, and investment benefits (IKE, IKZE) for individuals and businesses.",
+      githubLink: "https://github.com/KajetanJedrych/calc",
+      demoLink: "https://kalkulatory.org/"
+    },
     {
         title: "A business card site for a local service provider",
         technologies: ["React", "Tailwind CSS"],
