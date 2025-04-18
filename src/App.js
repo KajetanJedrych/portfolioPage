@@ -4,11 +4,10 @@ import Header from './components/Header';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import { BlogList, BlogPostDetail } from './pages/Articles';
 import Footer from './components/Footer';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 import ScrollToTop from "./components/ScrollToTop";
-
-
 
 const App = () => {
   return (
@@ -20,6 +19,8 @@ const App = () => {
           <Route path="/" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:id" element={<BlogPostDetail />} />
         </Routes>
         <Footer />
         <Analytics />
