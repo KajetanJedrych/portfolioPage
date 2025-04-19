@@ -5,8 +5,15 @@ const Projects = () => {
   const projects = [
         
     {
+      title: "SummaryAI",
+      technologies: ["React", "Tailwind CSS", "TypeScript", "Next.js", "GeminiAi"],
+      description: "A website that exports and analyzes YouTube comments using Gemini to generate summaries.",
+      githubLink: "https://github.com/KajetanJedrych/summaryai",
+      demoLink: "https://github.com/KajetanJedrych/summaryai"
+    },
+    {
       title: "Calculator Page",
-      technologies: ["React", "Tailwind CSS", "TypeScript", "MaterialUi"],
+      technologies: ["React", "Tailwind CSS", "TypeScript", "Next.js"],
       description: "A website for calculating Polish taxes, social security, and investment benefits (IKE, IKZE) for individuals and businesses.",
       githubLink: "https://github.com/KajetanJedrych/calc",
       demoLink: "https://kalkulatory.org/"
