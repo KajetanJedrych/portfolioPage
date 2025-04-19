@@ -1,25 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Calendar, Clock, Tag, FileText, Download } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Tag, FileText } from 'lucide-react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { nord } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-// Sample blog data - in a real app, you would likely fetch this from a JSON file or API
+
+// Updated blog data structure - now referencing markdown files instead of PDF files
 const blogPosts = [
   {
     id: 1,
     title: "Building a Website Just for Myself",
     summary: "A personal story of building and launching my first solo project — just for me, but finished and online.",
-    pdfUrl: "/blog-pdfs/FirstProjectBlogPost.pdf",
+    markdownPath: "/blog-md/FirstProjectBlogPost.md", // Path to your markdown file (same name as the PDF)
     coverImage: "/blog-images/KalkulatoryOrg.png",
     date: "2025-04-19",
     readTime: "5 min",
-    tags: ["React", "Next.js", "Web Development",],
+    tags: ["React", "Next.js", "Web Development"],
     author: "Kajetan Jędrych"
   },
   {
     id: 2,
     title: "Modern JavaScript Features Every Developer Should Know",
     summary: "Explore the essential JavaScript features that have transformed how we write code in modern web development.",
-    pdfUrl: "/blog-pdfs/modern-javascript.pdf",
+    markdownPath: "/blog-md/modern-javascript.md", // Path to your markdown file (same name as the PDF)
     coverImage: "/blog-images/javascript.jpg",
     date: "2024-01-15",
     readTime: "6 min",
@@ -30,7 +36,7 @@ const blogPosts = [
     id: 3,
     title: "Building a RESTful API with Node.js and Express",
     summary: "Learn how to create a robust RESTful API using Node.js and Express for your web applications.",
-    pdfUrl: "/blog-pdfs/nodejs-express-api.pdf",
+    markdownPath: "/blog-md/nodejs-express-api.md", // Path to your markdown file (same name as the PDF)
     coverImage: "/blog-images/nodejs-express.jpg",
     date: "2024-02-20",
     readTime: "10 min",
@@ -39,32 +45,71 @@ const blogPosts = [
   }
 ];
 
-// PDF Viewer Component
-const PdfViewer = ({ pdfUrl }) => {
+// Markdown Renderer Component
+const MarkdownRenderer = ({ markdownContent }) => {
   return (
-    <div className="w-full h-full">
-      <object
-        data={pdfUrl}
-        type="application/pdf"
-        className="w-full h-screen rounded-lg"
+    <div className="prose prose-slate lg:prose-lg max-w-none">
+      <ReactMarkdown
+        rehypePlugins={[rehypeRaw]}
+        remarkPlugins={[remarkGfm]}
+        components={{
+          h1: ({node, ...props}) => <h1 className="text-3xl font-bold mb-6 mt-8 text-slate-800" {...props} />,
+          h2: ({node, ...props}) => <h2 className="text-2xl font-bold mb-4 mt-8 text-slate-800" {...props} />,
+          h3: ({node, ...props}) => <h3 className="text-xl font-bold mb-3 mt-6 text-slate-800" {...props} />,
+          p: ({node, ...props}) => <p className="mb-6 text-slate-700 leading-relaxed" {...props} />,
+          a: ({node, ...props}) => <a className="text-blue-600 hover:text-blue-800 underline" {...props} />,
+          ul: ({node, ...props}) => <ul className="mb-6 list-disc pl-6" {...props} />,
+          ol: ({node, ...props}) => <ol className="mb-6 list-decimal pl-6" {...props} />,
+          li: ({node, ...props}) => <li className="mb-2" {...props} />,
+          blockquote: ({node, ...props}) => (
+            <blockquote className="border-l-4 border-amber-400 pl-4 italic my-6 text-slate-600" {...props} />
+          ),
+          em: ({node, ...props}) => <em className="italic text-slate-700" {...props} />,
+          strong: ({node, ...props}) => <strong className="font-bold text-slate-900" {...props} />,
+          hr: ({node, ...props}) => <hr className="my-8 border-t border-slate-200" {...props} />,
+          img: ({node, ...props}) => (
+            <img 
+              className="rounded-lg shadow-md my-6 max-w-full h-auto mx-auto" 
+              {...props} 
+              alt={props.alt || "Blog image"} 
+            />
+          ),
+          code({node, inline, className, children, ...props}) {
+            const match = /language-(\w+)/.exec(className || '');
+            return !inline && match ? (
+              <SyntaxHighlighter
+                style={nord}
+                language={match[1]}
+                PreTag="div"
+                className="rounded-md my-6"
+                showLineNumbers={true}
+                {...props}
+              >
+                {String(children).replace(/\n$/, '')}
+              </SyntaxHighlighter>
+            ) : (
+              <code 
+                className={`${inline ? 'bg-slate-100 text-slate-800 px-1 py-0.5 rounded text-sm' : 
+                  'block bg-slate-100 p-4 rounded-md overflow-auto my-6'}`}
+                {...props}
+              >
+                {children}
+              </code>
+            );
+          },
+          pre({node, ...props}) {
+            return (
+              <pre className="bg-slate-100 p-0 rounded-md overflow-auto my-6" {...props} />
+            );
+          }
+        }}
       >
-        <div className="bg-white rounded-lg p-8 text-center shadow-lg">
-          <p className="text-lg mb-4">
-            Unable to display PDF. You can download it instead.
-          </p>
-          <a
-            href={pdfUrl}
-            download
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            <Download className="w-5 h-5" />
-            Download PDF
-          </a>
-        </div>
-      </object>
+        {markdownContent}
+      </ReactMarkdown>
     </div>
   );
 };
+
 
 // Blog List Component
 export const BlogList = () => {
@@ -86,10 +131,7 @@ export const BlogList = () => {
     <section className="bg-gradient-to-b from-amber-50 to-amber-100 py-16 px-4 min-h-screen" id="blog">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-slate-800 mb-4"> The site is under construction — all articles are currently mocked.</h1>
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">
-            My Blog
-          </h2>
+          <h1 className="text-4xl font-bold text-slate-800 mb-4">My Blog</h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Thoughts, tutorials, and insights on web development, programming, and technology.
           </p>
@@ -221,27 +263,55 @@ export const BlogList = () => {
   );
 };
 
-// Blog Post Detail Component with PDF Viewer
+// Blog Post Detail Component with Markdown Content
 export const BlogPostDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState(null);
+  const [markdownContent, setMarkdownContent] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
-    // In a real app, you would fetch the post from an API
+    // Find the post by ID
     const foundPost = blogPosts.find(post => post.id === parseInt(id));
     
     if (foundPost) {
       setPost(foundPost);
-      // Scroll to top when post loads
-      window.scrollTo(0, 0);
+      
+      // Fetch the markdown content from the file
+      fetch(foundPost.markdownPath)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to load markdown file');
+          }
+          return response.text();
+        })
+        .then(content => {
+          // Process markdown content to fix common issues
+          // Replace double asterisks with proper bold markdown
+          const processedContent = content
+            .replace(/\*\*([^*]+)\*\*/g, '**$1**')
+            // Fix italics
+            .replace(/\*([^*]+)\*/g, '_$1_')
+            // Extra spacing between paragraphs if needed
+            .replace(/\n\n/g, '\n\n');
+          
+          setMarkdownContent(processedContent);
+          setIsLoading(false);
+          // Scroll to top when post loads
+          window.scrollTo(0, 0);
+        })
+        .catch(error => {
+          console.error('Error loading markdown:', error);
+          setIsLoading(false);
+        });
     } else {
       // Redirect if post not found
       navigate('/blog');
     }
   }, [id, navigate]);
   
-  if (!post) {
+  if (!post || isLoading) {
     return (
       <div className="bg-gradient-to-b from-amber-50 to-amber-100 py-16 px-4 min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -253,25 +323,15 @@ export const BlogPostDetail = () => {
   
   return (
     <section className="bg-gradient-to-b from-amber-50 to-amber-100 py-8 px-4 min-h-screen">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-6 flex justify-between items-center">
+      <div className="max-w-3xl mx-auto">
+        <div className="mb-6 flex items-center">
           <Link to="/blog" className="inline-flex items-center text-blue-600 hover:text-blue-800 group">
             <ArrowLeft className="w-5 h-5 mr-2 group-hover:transform group-hover:-translate-x-1 transition-transform" />
             Back to all articles
           </Link>
-          
-          <a 
-            href={post.pdfUrl} 
-            download
-            className="inline-flex items-center gap-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full
-            hover:bg-blue-600 hover:text-white transition-colors duration-300"
-          >
-            <Download className="w-4 h-4" />
-            Download PDF
-          </a>
         </div>
         
-        <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-4 md:p-6 mb-8">
+        <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-8 mb-8">
           <div className="flex gap-2 mb-3">
             {post.tags.map((tag, tagIndex) => (
               <span 
@@ -283,7 +343,7 @@ export const BlogPostDetail = () => {
             ))}
           </div>
           
-          <h1 className="text-2xl md:text-3xl font-bold text-slate-800 mb-3">
+          <h1 className="text-3xl font-bold text-slate-800 mb-3">
             {post.title}
           </h1>
           
@@ -291,7 +351,7 @@ export const BlogPostDetail = () => {
             {post.summary}
           </p>
           
-          <div className="flex items-center justify-between text-slate-500 text-sm border-b border-slate-200 pb-4">
+          <div className="flex items-center justify-between text-slate-500 text-sm border-b border-slate-200 pb-4 mb-8">
             <div className="flex items-center">
               <span className="font-medium text-slate-700">{post.author}</span>
             </div>
@@ -306,11 +366,11 @@ export const BlogPostDetail = () => {
               </span>
             </div>
           </div>
-        </div>
-        
-        {/* PDF Viewer */}
-        <div className="rounded-xl overflow-hidden shadow-lg h-screen">
-          <PdfViewer pdfUrl={post.pdfUrl} />
+          
+          {/* Markdown Content */}
+          <article className="article-content">
+            <MarkdownRenderer markdownContent={markdownContent} />
+          </article>
         </div>
       </div>
     </section>
