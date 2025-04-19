@@ -6,13 +6,13 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 const blogPosts = [
   {
     id: 1,
-    title: "Getting Started with React and Tailwind CSS",
-    summary: "A comprehensive guide for beginners on how to set up and use React with Tailwind CSS for modern web development.",
-    pdfUrl: "/blog-pdfs/react-tailwind-guide.pdf",
-    coverImage: "/blog-images/react-tailwind.jpg",
-    date: "2023-12-10",
-    readTime: "8 min",
-    tags: ["React", "Tailwind CSS", "Web Development"],
+    title: "Building a Website Just for Myself",
+    summary: "A personal story of building and launching my first solo project — just for me, but finished and online.",
+    pdfUrl: "/blog-pdfs/FirstProjectBlogPost.pdf",
+    coverImage: "/blog-images/KalkulatoryOrg.png",
+    date: "2025-04-19",
+    readTime: "5 min",
+    tags: ["React", "Next.js", "Web Development",],
     author: "Kajetan Jędrych"
   },
   {
