@@ -33,13 +33,13 @@ const blogPosts = [
   },
   {
     id: 3,
-    title: "Building a RESTful API with Node.js and Express",
-    summary: "Learn how to create a robust RESTful API using Node.js and Express for your web applications.",
-    markdownPath: "/blog-md/nodejs-express-api.md", 
-    coverImage: "/blog-images/nodejs-express.jpg",
-    date: "2024-02-20",
+    title: "The Chaos of Starting… and Never Finishing",
+    summary: "Learn some of my methods to finish what you started.",
+    markdownPath: "/blog-md/Productive.md", 
+    coverImage: "/blog-images/Miro.png",
+    date: "2025-04-21",
     readTime: "10 min",
-    tags: ["Node.js", "Express", "API", "Backend"],
+    tags: ["Productivity", "Time management", "Tricks and tips"],
     author: "Kajetan Jędrych"
   }
 ];
