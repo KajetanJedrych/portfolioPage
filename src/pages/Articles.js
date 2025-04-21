@@ -8,13 +8,12 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nord } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
-// Updated blog data structure - now referencing markdown files instead of PDF files
 const blogPosts = [
   {
     id: 1,
     title: "Building a Website Just for Myself",
     summary: "A personal story of building and launching my first solo project — just for me, but finished and online.",
-    markdownPath: "/blog-md/FirstProjectBlogPost.md", // Path to your markdown file (same name as the PDF)
+    markdownPath: "/blog-md/FirstProjectBlogPost.md", 
     coverImage: "/blog-images/KalkulatoryOrg.png",
     date: "2025-04-19",
     readTime: "5 min",
@@ -23,20 +22,20 @@ const blogPosts = [
   },
   {
     id: 2,
-    title: "Modern JavaScript Features Every Developer Should Know",
-    summary: "Explore the essential JavaScript features that have transformed how we write code in modern web development.",
-    markdownPath: "/blog-md/modern-javascript.md", // Path to your markdown file (same name as the PDF)
-    coverImage: "/blog-images/javascript.jpg",
-    date: "2024-01-15",
+    title: "Brilliant Idea (But Only in My Head)",
+    summary: "Built an AI-powered app to analyze social media comments — it was brilliant... in my head.",
+    markdownPath: "/blog-md/BriliantIdea.md",
+    coverImage: "/blog-images/Gemini.png",
+    date: "2025-04-21",
     readTime: "6 min",
-    tags: ["JavaScript", "ES6", "Web Development"],
+    tags: ["React", "Next.js", "Web Development", "GeminiAi"],
     author: "Kajetan Jędrych"
   },
   {
     id: 3,
     title: "Building a RESTful API with Node.js and Express",
     summary: "Learn how to create a robust RESTful API using Node.js and Express for your web applications.",
-    markdownPath: "/blog-md/nodejs-express-api.md", // Path to your markdown file (same name as the PDF)
+    markdownPath: "/blog-md/nodejs-express-api.md", 
     coverImage: "/blog-images/nodejs-express.jpg",
     date: "2024-02-20",
     readTime: "10 min",
@@ -45,7 +44,6 @@ const blogPosts = [
   }
 ];
 
-// Markdown Renderer Component
 const MarkdownRenderer = ({ markdownContent }) => {
   return (
     <div className="prose prose-slate lg:prose-lg max-w-none">
@@ -173,7 +171,6 @@ export const BlogList = () => {
           </div>
         </div>
         
-        {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredPosts.map((post) => (
             <div 
@@ -186,7 +183,6 @@ export const BlogList = () => {
               <div className="relative bg-white/80 backdrop-blur-sm rounded-xl shadow-lg transition-all duration-300 
                 group-hover:shadow-xl group-hover:bg-gradient-to-br from-amber-50 to-amber-100 h-full flex flex-col">
                 
-                {/* Optional Cover Image */}
                 {post.coverImage && (
                   <div className="h-48 rounded-t-xl overflow-hidden">
                     <div 
