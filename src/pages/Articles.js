@@ -15,12 +15,7 @@ const blogPosts = [
     summary: "A personal story of building and launching my first solo project — just for me, but finished and online.",
     markdownPath: "/blog-md/FirstProjectBlogPost.md", 
     coverImage: "/blog-images/KalkulatoryOrg.png",
-    headerMedia: {
-      type: "video",
-      url: "/blog-images/SummaryAiVideo.mp4",
-      poster: "/blog-images/SummaryAiPhoto.png",
-      caption: "Short clip of my application"
-    },
+    headerMedia: null,
     date: "2025-04-19",
     readTime: "5 min",
     tags: ["React", "Next.js", "Web Development"],
@@ -32,7 +27,12 @@ const blogPosts = [
     summary: "Built an AI-powered app to analyze social media comments — it was brilliant... in my head.",
     markdownPath: "/blog-md/BriliantIdea.md",
     coverImage: "/blog-images/Gemini.png",
-    headerMedia: null,
+    headerMedia: {
+      type: "video",
+      url: "/blog-images/SummaryAiVideo.mp4",
+      poster: "/blog-images/SummaryAiPhoto.png",
+      caption: "Short clip of my application"
+    },
     date: "2025-04-21",
     readTime: "6 min",
     tags: ["React", "Next.js", "Web Development", "GeminiAi"],
