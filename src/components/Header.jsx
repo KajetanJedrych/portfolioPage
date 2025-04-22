@@ -6,7 +6,7 @@ const Header = () => {
     <header className="bg-amber-50 shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
       <a href="https://www.jedrychk.com/" className="text-2xl font-bold text-gray-800">
-          <span className="text-blue-600">Kajetan's </span>Portfolio
+          <span className="text-blue-600">Kajetan </span> Jędrych
         </a>
         <nav>
         <ul className="flex space-x-6">
