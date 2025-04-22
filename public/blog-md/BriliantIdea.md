@@ -27,4 +27,4 @@ What is it, exactly?
 I’ll reveal that soon.
 
 For now, all I know is:  
-**I need to learn React Native.**
+I need to learn React Native.
