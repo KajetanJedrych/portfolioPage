@@ -4,6 +4,7 @@ const Skills = () => {
   const skills = [
     { name: 'JavaScript', icon: 'js.svg' },
     { name: 'React', icon: 'logo512.png' },
+    { name: 'Next.js', icon: 'nextjs-icon.svg' },
     { name: 'GitHub', icon: 'github.png' },
     { name: 'HTML', icon: 'html-5-logo.svg' },
     { name: 'CSS', icon: 'CSS3_logo.svg' },
