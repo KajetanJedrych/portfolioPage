@@ -9,7 +9,7 @@ const Projects = () => {
       technologies: ["React", "Tailwind CSS", "TypeScript", "Next.js", "GeminiAi"],
       description: "A website that exports and analyzes YouTube comments using Gemini to generate summaries.",
       githubLink: "https://github.com/KajetanJedrych/summaryai",
-      demoLink: "https://github.com/KajetanJedrych/summaryai"
+      demoLink: "https://www.jedrychk.com/blog/1"
     },
     {
       title: "Calculator Page",
