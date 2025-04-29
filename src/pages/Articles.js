@@ -10,6 +10,23 @@ import { nord } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const blogPosts = [
   {
+    id: 4,
+    title: "How I Found the Perfect Budget-Friendly Way to Deploy My Apps",
+    summary: "Discover how I deploy my apps – step-by-step instructions included.",
+    markdownPath: "/blog-md/Coolify.md", 
+    coverImage: "/blog-images/coolify.png",
+    headerMedia: {
+      type: "image",
+      url: "/blog-images/coolify.png",
+      poster: "/blog-images/coolify.png",
+      caption: "How I Found the Perfect Budget-Friendly Way to Deploy My Apps"
+    },
+    date: "2025-04-29",
+    readTime: "10 min",
+    tags: ["Coolify", "Deployment", "Instructions"],
+    author: "Kajetan Jędrych"
+  },
+  {
     id: 1,
     title: "Building a Website Just for Myself",
     summary: "A personal story of building and launching my first solo project — just for me, but finished and online.",
