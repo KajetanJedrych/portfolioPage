@@ -10,6 +10,23 @@ import { nord } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const blogPosts = [
   {
+    id: 5,
+    title: "From Audio Drivers to AI Testing: My Journey into AI testing",
+    summary: "A hands-on dive into testing AI models – from performance tuning to LLM evaluation and security testing, all inspired by a real-world project.",
+    markdownPath: "/blog-md/LlmTesting.md", 
+    coverImage: "/blog-images/LlmTesting.png",
+    headerMedia: {
+      type: "image",
+      url: "/blog-images/LlmTesting.png",
+      poster: "/blog-images/LlmTesting.png",
+      caption: "From Audio Drivers to AI Testing: My Journey into AI testing"
+    },
+    date: "2025-05-16",
+    readTime: "10 min",
+    tags: ["AI Testing", "LLM", "Machine Learning",],
+    author: "Kajetan Jędrych"
+  },
+  {
     id: 4,
     title: "How I Found the Perfect Budget-Friendly Way to Deploy My Apps",
     summary: "Discover how I deploy my apps – step-by-step instructions included.",
