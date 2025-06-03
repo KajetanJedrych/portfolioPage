@@ -8,10 +8,10 @@ const Hero = () => {
           Hello my name is  <span className="text-blue-600">Kajetan</span>
         </h1>
         <p className="text-lg text-gray-600">
-          As a QA Engineer, I bring expertise in delivering high-quality software testing solutions through my 9-to-5 role.
-          Proficient in tools and technologies such as AWS, Python, Java, JavaScript, SQL, and Jenkins, I ensure robust and efficient testing processes.
-          Beyond my professional work, I’m deeply passionate about web application development, a skill I’ve honed during university and in my free time.
-          I specialize in building full-stack projects using Django and React, blending creativity with technical precision to bring ideas to life.
+        I work as a QA Engineer, mainly because I haven’t (yet) come up with my brilliant million-dollar SaaS idea like all those guys on YouTube.
+        I bring solid hands-on experience in Python, JavaScript, AWS, AI testing, CI/CD pipelines, Cucumber and SQL. Basically everything you need to squash bugs and keep software running smoothly.
+        I’m not just about code and tests, though. I’m one of the rare QA devs who can run a half-marathon, bench press 100 kg, and play hockey — all while learning new tech on the fly.
+         Ready to bring my skills, energy, and a touch of humor to your team. Let’s build something awesome together!
         </p>
       </div>
     </section>
