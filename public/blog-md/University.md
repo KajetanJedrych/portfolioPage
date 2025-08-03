@@ -102,7 +102,7 @@ There were also Erasmus exchange opportunities 🌍. I couldn’t take part, but
 I love learning by doing, and these studies gave me a ton of hands-on assignments.
 
 I developed a habit of spending two hours every morning on my own side projects — a habit I still maintain post-graduation ☕🛠️.  
-_You can read more about that here: My Productive Mornings_
+\_You can read more about that here: https://www.jedrychk.com/blog/3
 
 ---
 
