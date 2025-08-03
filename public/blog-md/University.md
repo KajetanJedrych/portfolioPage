@@ -93,7 +93,7 @@ We were like a low-budget version of an Ivy League alumni network 😄.
 
 WSB offered a bunch of side courses — some even with certifications.
 
-I completed ISTQB training, GitHub courses, and most importantly, got a Python PCAP certificate — all for free 💡.
+I completed Docker training, GitHub courses, and most importantly, got a Python PCAP certificate — all for free 💡.
 
 There were also Erasmus exchange opportunities 🌍. I couldn’t take part, but some friends went to the UK and Spain and said it was incredible. I regret missing out on that 😔.
 
