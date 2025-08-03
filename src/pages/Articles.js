@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Calendar, Clock, Tag, FileText } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, FileText } from 'lucide-react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -9,6 +9,23 @@ import { nord } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
 const blogPosts = [
+    {
+    id: 6,
+    title: "I Just Finished My Master’s Degree at a Private University in Poland — Was It Worth It?",
+    summary: "A candid look at my 20-year educational journey, the real costs of private university, and whether that engineering diploma actually paid off — with a fair share of pros, cons, and honest reflections.",
+    markdownPath: "/blog-md/University.md", 
+    coverImage: "/blog-images/University.png",
+    headerMedia: {
+      type: "image",
+      url: "/blog-images/University.png",
+      poster: "/blog-images/University.png",
+      caption: "I Just Finished My Master’s Degree at a Private University in Poland — Was It Worth It?"
+    },
+    date: "2025-08-03",
+    readTime: "12 min",
+    tags: ["Education", "Career", "Private University", "IT", "Poland"],
+    author: "Kajetan Jędrych"
+  },
   {
     id: 5,
     title: "From Audio Drivers to AI Testing: My Journey into AI testing",
