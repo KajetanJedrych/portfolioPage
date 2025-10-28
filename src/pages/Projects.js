@@ -3,7 +3,13 @@ import { Code, ExternalLink, Github, MessageCircle } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
-        
+    {
+      title: "AllInBio",
+      technologies: ["Next.js", "React", "Tailwind CSS", "PostgreSQL", "NextAuth.js", "Stripe"],
+      description: "A modern link-in-bio platform that allows creators and influencers to build customizable landing pages, analytics tracking, and beautiful themes. Features include OAuth authentication, subscription management, and mobile optimization.",
+      githubLink: "https://github.com/KajetanJedrych/bio-links",
+      demoLink: "https://allinbio.page" 
+    },
     {
       title: "SummaryAI",
       technologies: ["React", "Tailwind CSS", "TypeScript", "Next.js", "GeminiAi"],
