@@ -3,10 +3,23 @@ import {Briefcase, ChevronRight, Download } from 'lucide-react';
 
 const WorkExperience = () => {
   const experiences = [
+      {
+      title: "Senior Quality Engineer",
+      company: "S&P Global",
+      period: "2025 - Current",
+      icon: <Briefcase className="w-6 h-6" />,
+      description: [
+        "Leading quality assurance for AI-powered financial data platform features",
+        "Testing both UI/UX and API integrations for enterprise chat applications",
+        "Validating AI model responses and ensuring data accuracy for financial analytics",
+        "Creating comprehensive test documentation and automation strategies using Gherkin syntax",
+        "Collaborating with cross-functional teams to maintain quality standards across Capital IQ Pro platform"
+      ]
+    },
     {
       title: "QA Engineer",
       company: "Acoustic",
-      period: "2024 - Current",
+      period: "2024 - 2025",
       icon: <Briefcase className="w-6 h-6" />,
       description: [
         "Managing entire testing process for marketing applications (web & API)",
