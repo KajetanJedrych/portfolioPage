@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Calendar, Clock, FileText } from 'lucide-react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nord } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -112,7 +111,6 @@ const MarkdownRenderer = ({ markdownContent }) => {
   return (
     <div className="prose prose-slate lg:prose-lg max-w-none">
       <ReactMarkdown
-        rehypePlugins={[rehypeRaw]}
         remarkPlugins={[remarkGfm]}
         components={{
           h1: ({node, ...props}) => <h1 className="text-3xl font-bold mb-6 mt-8 text-slate-800" {...props} />,
