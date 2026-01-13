@@ -8,9 +8,26 @@ import { nord } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
 const blogPosts = [
+  {
+    id: 7,
+    title: "When You're Building Innocent Side Projects… and the German Police Email You",
+    summary: "One ordinary day, I received an email from my VPS provider about suspicious activity detected by the German Federal Office for Information Security. A story about outdated dependencies, cryptocurrency mining, and lessons learned the hard way.",
+    markdownPath: "/blog-md/GermanPolice.md",
+    coverImage: "/blog-images/GermanPolice.png",
+    headerMedia: {
+      type: "image",
+      url: "/blog-images/GermanPolice.png",
+      poster: "/blog-images/GermanPolice.png",
+      caption: "When You're Building Innocent Side Projects… and the German Police Email You"
+    },
+    date: "2026-01-13",
+    readTime: "8 min",
+    tags: ["Security", "DevOps", "VPS", "Dependencies", "Lessons Learned"],
+    author: "Kajetan Jędrych"
+  },
     {
     id: 6,
-    title: "I Just Finished My Master’s Degree at a Private University in Poland — Was It Worth It?",
+    title: "I Just Finished My Master's Degree at a Private University in Poland — Was It Worth It?",
     summary: "A candid look at my 20-year educational journey, the real costs of private university, and whether that engineering diploma actually paid off — with a fair share of pros, cons, and honest reflections.",
     markdownPath: "/blog-md/University.md", 
     coverImage: "/blog-images/University.png",
