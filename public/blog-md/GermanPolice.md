@@ -6,7 +6,7 @@ It started like this:
 
 *"We have received a notification from the German Federal Office for Information Security (BSI) for (the IP address of) a server you have with us."*
 
-I don't know about you, but the moment I read **German Federal Office** and **my server** in the same sentence, everything else immediately stopped. Coffee forgotten. Slack ignored. Full focus mode activated.
+I don't know about you, but the moment I read German Federal Office and my server in the same sentence, everything else immediately stopped. Coffee forgotten. Slack ignored. Full focus mode activated.
 
 According to the email, there was suspicious activity detected on my server — things happening that I was completely unaware of. The server had most likely been compromised and was being used for cryptocurrency mining… or potentially something much worse.
 
@@ -50,7 +50,7 @@ Migrating user data from multiple applications, reconfiguring environments, rede
 
 This experience taught me lessons that will stay with me forever.
 
-**Outdated packages are not harmless**
+***Outdated packages are not harmless****
 If I see a warning about outdated dependencies or vulnerabilities — even medium severity — I update them. Immediately. And I check regularly.
 
 **Observability is not optional**
@@ -73,7 +73,7 @@ But what still amazes me is how strong denial can be.
 
 I read countless warnings about a major vulnerability in React components. I saw memes. I saw official company messages. And still, my brain somehow decided:
 
-*"This doesn't apply to me."*
+"This doesn't apply to me."
 
 It did.
 
