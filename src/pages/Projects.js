@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, ExternalLink, Github, MessageCircle } from 'lucide-react';
+import { ExternalLink, Github, MessageCircle } from 'lucide-react';
 
 const Projects = () => {
   const projects = [

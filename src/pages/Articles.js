@@ -130,11 +130,11 @@ const MarkdownRenderer = ({ markdownContent }) => {
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          h1: ({node, ...props}) => <h1 className="text-3xl font-bold mb-6 mt-8 text-slate-800" {...props} />,
-          h2: ({node, ...props}) => <h2 className="text-2xl font-bold mb-4 mt-8 text-slate-800" {...props} />,
-          h3: ({node, ...props}) => <h3 className="text-xl font-bold mb-3 mt-6 text-slate-800" {...props} />,
-          p: ({node, ...props}) => <p className="mb-6 text-slate-700 leading-relaxed" {...props} />,
-          a: ({node, ...props}) => <a className="text-blue-600 hover:text-blue-800 underline" {...props} />,
+          h1: ({node, children, ...props}) => <h1 className="text-3xl font-bold mb-6 mt-8 text-slate-800" {...props}>{children}</h1>,
+          h2: ({node, children, ...props}) => <h2 className="text-2xl font-bold mb-4 mt-8 text-slate-800" {...props}>{children}</h2>,
+          h3: ({node, children, ...props}) => <h3 className="text-xl font-bold mb-3 mt-6 text-slate-800" {...props}>{children}</h3>,
+          p: ({node, children, ...props}) => <p className="mb-6 text-slate-700 leading-relaxed" {...props}>{children}</p>,
+          a: ({node, children, ...props}) => <a className="text-blue-600 hover:text-blue-800 underline" {...props}>{children}</a>,
           ul: ({node, ...props}) => <ul className="mb-6 list-disc pl-6" {...props} />,
           ol: ({node, ...props}) => <ol className="mb-6 list-decimal pl-6" {...props} />,
           li: ({node, ...props}) => <li className="mb-2" {...props} />,
